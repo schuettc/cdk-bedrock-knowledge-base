@@ -212,7 +212,7 @@ A cloudwatch log group is added with this name:
 /aws/vendedlogs/bedrock/knowledge-bases/APPLICATION_LOGS/your_kb_id
 ```
 Ingestion jobs logs are stored here, for example:
-![Logs](/images/logs.png)
+![Logs](/images/Logs.PNG)
 ## Deploy
 
 To deploy this demo:
