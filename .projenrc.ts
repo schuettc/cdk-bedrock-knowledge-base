@@ -31,6 +31,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     '@types/aws-lambda',
     '@aws-sdk/client-ssm',
     '@aws-sdk/client-bedrock-agent',
+    '@aws-sdk/client-cloudwatch-logs',
     '@aws-sdk/client-opensearchserverless',
     '@opensearch-project/opensearch',
   ],
