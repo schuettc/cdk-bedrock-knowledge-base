@@ -10,6 +10,9 @@ import {
   updateKnowledgeBase,
   deleteKnowledgeBase,
 } from './bedrock';
+import {
+  createLogDelivery,
+} from './cloudwatch';
 import { createIndex } from './openSearch';
 import {
   createAccessPolicy,
@@ -70,6 +73,13 @@ export const handler = async (
           requestProperties.knowledgeBaseEmbeddingModelArn,
         collectionArn: collection.arn!,
       });
+
+      await createLogDelivery({
+        knowledgeBaseId: knowledgeBase.knowledgeBase?.knowledgeBaseId!,
+        knowledgeBaseArn: knowledgeBase.knowledgeBase?.knowledgeBaseArn!,
+        accountId: requestProperties.accountId,
+      });
+
       const dataSource = await createDataSource({
         knowledgeBaseBucketArn: requestProperties.knowledgeBaseBucketArn,
         knowledgeBaseId: knowledgeBase.knowledgeBase?.knowledgeBaseId!,
