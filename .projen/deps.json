@@ -2,17 +2,16 @@
   "dependencies": [
     {
       "name": "@types/node",
-      "version": "^18",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "version": "^6",
+      "version": "^7",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/parser",
-      "version": "^6",
+      "version": "^7",
       "type": "build"
     },
     {
@@ -51,6 +50,10 @@
     },
     {
       "name": "@aws-sdk/client-bedrock-agent",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/client-cloudwatch-logs",
       "type": "runtime"
     },
     {
