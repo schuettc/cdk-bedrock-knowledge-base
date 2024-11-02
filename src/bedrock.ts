@@ -50,6 +50,7 @@ export class BedrockKnowledgeBaseResources extends Construct {
                 actions: [
                   'bedrock:*KnowledgeBase',
                   'bedrock:*DataSource',
+                  'bedrock:AllowVendedLogDeliveryForResource',
                   'iam:PassRole',
                 ],
               }),
@@ -76,6 +77,14 @@ export class BedrockKnowledgeBaseResources extends Construct {
               new PolicyStatement({
                 resources: ['*'],
                 actions: ['aoss:*', 'iam:CreateServiceLinkedRole'],
+              }),
+            ],
+          }),
+          ['logsPolicy']: new PolicyDocument({
+            statements: [
+              new PolicyStatement({
+                resources: ['*'],
+                actions: ['logs:*'],
               }),
             ],
           }),
@@ -151,6 +160,7 @@ export class BedrockKnowledgeBaseResources extends Construct {
           namePrefix: props.namePrefix,
           knowledgeBaseEmbeddingModelArn:
             'arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-embed-text-v1',
+          accountId: Stack.of(this).account,
         },
       },
     );

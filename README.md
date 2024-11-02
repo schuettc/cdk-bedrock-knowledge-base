@@ -206,6 +206,13 @@ Now we can test our Knowledge Base with the uploaded file and get the results ba
 
 ![RAGResults](/images/RAGResult.png)
 
+## Logging
+A cloudwatch log group is added with this name:
+```
+/aws/vendedlogs/bedrock/knowledge-bases/APPLICATION_LOGS/your_kb_id
+```
+Ingestion jobs logs are stored here, for example:
+![Logs](/images/Logs.PNG)
 ## Deploy
 
 To deploy this demo:
